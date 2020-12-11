@@ -23,7 +23,7 @@ $("#updateteacher").hide();
 	
 $("#teacherlist").change(function(){
 
-
+exit();
 	
 $.ajax({
 				url: "pulldata.php",
@@ -66,6 +66,7 @@ else
 	
 $(".edit_tr").click(function()
 {
+exit();
 var ID=$(this).attr('id');
 
 $("#laststep_"+ID).hide();
@@ -322,7 +323,7 @@ $i++;
 	<h1>Select Add Teacher Option to Add Teacher or Select Teacher to be edited.<br />
 	To Remove Teacher Select Teacher and Empty the Teacher Fullname</h1>
 	
-	<form action="addupdate.php" id="addeditform" method="post">
+<?php //	<form action="addupdate.php" id="addeditform" method="post"> ?>
 	<div style="margin-left: 48px;">
 	Teacher List:<?php
 	$name=mysqli_query($conn,"SELECT * FROM div_teachers where schoolid = '$schoolid' AND schoollevel = '$schoollevel'");
